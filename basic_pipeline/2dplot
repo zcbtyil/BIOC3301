@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+
+module load eb
+module load Miniconda2
+source activate qiime1
+
+make_2d_plots.py -i ~/basic_pipeline/cdout/bdiv_even30000/unweighted_unifrac_pc.txt -o ~/basic_pipeline/bdiv_2d_plot -m ~/2018_02_smb/map.tsv
+
+source deactivate
+~
+~
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+
+module load eb
+module load Miniconda2
+source activate qiime1
+
+alpha_diversity.py -i ~/basic_pipeline/otus/otu_table.biom -o ~/basic_pipeline/adiv_shannon.txt -m shannon
+ 
+source deactivate

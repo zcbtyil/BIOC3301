@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+
+module load eb
+module load Miniconda2
+source activate qiime1
+
+compare_categories.py --method anosim -i ~/basic_pipeline/cdout/bdiv_even30000/weighted_unifrac_dm.txt -o ~/basic_pipeline/anosim_out/anosim_potassium -m ~/2018_02_smb/map.tsv  -n 999 -c SamplePotassium
+
+source deactivate
+~                                                                               
+~      
